@@ -1,7 +1,6 @@
 package cl.prezdev.util.gui.jpopupmenu;
 
 import java.awt.Point;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JComponent;
@@ -37,9 +36,9 @@ public class JPopUpMenuService {
         });
     }
 
-    public void addOption(String optionText, ActionListener actionListener) {
-        JMenuItem jMenuItem = new JMenuItem(optionText);
-        jMenuItem.addActionListener(actionListener);
+    public void addOption(Option option) {
+        JMenuItem jMenuItem = new JMenuItem(option.getOptionText());
+        jMenuItem.addActionListener(option);
 
         this.jPopupMenu.add(jMenuItem);
     }
