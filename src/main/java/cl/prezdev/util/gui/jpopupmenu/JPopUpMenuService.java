@@ -27,9 +27,9 @@ public class JPopUpMenuService {
                     jPopupMenu.setLocation(mouseEvent.getPoint());
 
                     jPopupMenu.show(
-                            jComponent,
-                            locationOnScreen.x,
-                            locationOnScreen.y
+                        jComponent,
+                        locationOnScreen.x,
+                        locationOnScreen.y
                     );
                 }
             }
