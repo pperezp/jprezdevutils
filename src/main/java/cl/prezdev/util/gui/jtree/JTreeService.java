@@ -1,6 +1,7 @@
 package cl.prezdev.util.gui.jtree;
 
 import javax.swing.JTree;
+import javax.swing.tree.TreeModel;
 
 public class JTreeService<T extends ITreeNode> {
 
@@ -37,5 +38,13 @@ public class JTreeService<T extends ITreeNode> {
 
     public void updateUI() {
         jtree.updateUI();
+    }
+    
+    public JTree getJtree(){
+        return this.jtree;
+    }
+    
+    public TreeModel getTreeModel(){
+        return this.jtree.getModel();
     }
 }
