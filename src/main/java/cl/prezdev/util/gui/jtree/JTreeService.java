@@ -4,6 +4,7 @@ import javax.swing.JTree;
 import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
+import java.awt.event.KeyAdapter;
 
 public class JTreeService<T extends ITreeNode> {
 
@@ -58,5 +59,9 @@ public class JTreeService<T extends ITreeNode> {
         for (int i = 0; i < jtree.getRowCount(); i++) {
             jtree.expandRow(i);
         }
+    }
+
+    public void addKeyAdapter(KeyAdapter keyAdapter){
+        this.jtree.addKeyListener(keyAdapter);
     }
 }
