@@ -64,4 +64,8 @@ public class JTreeService<T extends ITreeNode> {
     public void addKeyAdapter(KeyAdapter keyAdapter){
         this.jtree.addKeyListener(keyAdapter);
     }
+
+    public boolean isSomeNodeSelected(){
+        return getSelectedNode() != null;
+    }
 }
