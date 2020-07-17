@@ -2,6 +2,8 @@ package cl.prezdev.util.gui.jtree;
 
 import javax.swing.JTree;
 import javax.swing.tree.TreeModel;
+import javax.swing.tree.TreeNode;
+import javax.swing.tree.TreePath;
 
 public class JTreeService<T extends ITreeNode> {
 
@@ -33,7 +35,11 @@ public class JTreeService<T extends ITreeNode> {
     }
 
     public void expandSelectedNode() {
-        jtree.expandPath(jtree.getSelectionPath());
+        expand(jtree.getSelectionPath());
+    }
+
+    private void expand(TreePath selectionPath) {
+        jtree.expandPath(selectionPath);
     }
 
     public void updateUI() {
@@ -46,5 +52,11 @@ public class JTreeService<T extends ITreeNode> {
     
     public TreeModel getTreeModel(){
         return this.jtree.getModel();
+    }
+
+    public void expandAllNodes(){
+        for (int i = 0; i < jtree.getRowCount(); i++) {
+            jtree.expandRow(i);
+        }
     }
 }
